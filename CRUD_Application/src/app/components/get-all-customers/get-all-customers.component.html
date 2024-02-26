@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+    <h2 class="text-center">Customer Details Table</h2>
+
+    <div class="crud-actions">
+        <button class="add-btn" routerLink="/customer">Post New Customer</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Sample data, replace with your actual data -->
+            <tr *ngFor="let customer of customers">
+                <td>{{customer.name}}</td>
+                <td>{{customer.email}}</td>
+                <td>{{customer.phone}}</td>
+                <td class="action-btns">
+                    <button class="edit-btn" routerLink="/customer/{{customer.id}}">Edit</button>
+                    <button class="delete-btn" (click)="deleteCustomer(customer.id)">Delete</button>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <!-- <script>
+        // Basic example of handling edit and delete actions
+        document.querySelectorAll('.edit-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Handle edit action, you can replace this with your logic
+                alert('Edit button clicked');
+            });
+        });
+
+        document.querySelectorAll('.delete-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Handle delete action, you can replace this with your logic
+                alert('Delete button clicked');
+            });
+        });
+    </script> -->
+
+</body>
+
+</html>
